@@ -1,44 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
+:root {
+  --modal-bg-opacity: 0.85; /* Adjust the opacity value here */
+}
+
 * {
   box-sizing: border-box;
-  margin: 0 auto;
   padding: 0;
-  max-width: 100%;
+  margin: 0; /* Added margin reset */
+}
+body {
+  background-color: rgba(15, 15, 15); /* Deep Navy Blue */
 }
 
 .header {
+  display: flex; /* Added display property for better alignment */
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px 5%;
   font-family: "Outfit", sans-serif;
   position: sticky;
-  position: -webkit-sticky;
   top: 0;
   z-index: 99;
-  background-color: white;
+  background-color: rgba(39, 34, 34, 0.72);
+  color: whitesmoke;
 }
+
 ul {
   list-style-type: none;
   display: flex;
-  padding: 0px 10px;
+  padding: 0 10px;
 }
 
 li {
-  padding: 15px 15px;
+  padding: 15px;
   font-size: 17px;
+  cursor: pointer; /* Added cursor property for better UX */
 }
+
 li:hover {
-  background-color: #111111;
+  background-color: #111;
   color: #e9e9e9;
-  padding: 15px 15px;
   border-radius: 25px;
-  cursor: pointer;
 }
 
 img {
   border-radius: 40px;
+  max-width: 100%; /* Ensure images fit within their containers */
+  height: auto; /* Maintain aspect ratio */
 }
 
 img:hover {
@@ -54,8 +64,7 @@ img:hover {
 
 .grid-item {
   padding: 5px;
-  box-sizing: border-box;
-  display: inline;
+  display: inline-block; /* Changed to inline-block for better alignment */
 }
 
 @media (min-width: 500px) {
@@ -80,4 +89,106 @@ img:hover {
   .grid-item {
     width: 20%;
   }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    var(--modal-bg-opacity)
+  ); /* Dark background with adjustable opacity */
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: transform 10s ease; /* Smooth transition for scaling */
+}
+
+.modal-content {
+  display: flex;
+  max-width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.45); /* Set background color with opacity */
+  transition: background-color 0.5s ease; /* Smooth background color transition */
+}
+
+.modal-content img {
+  max-width: 40%;
+  border-radius: 10px;
+}
+
+.description {
+  max-width: 50%;
+  padding: 20px;
+  font-family: "Outfit", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+  }
+
+  .modal-content img,
+  .description {
+    max-width: 100%;
+  }
+}
+.prev,
+.next {
+  position: absolute; /* Absolutely position the buttons */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for exact center */
+  background-color: transparent; /* No background for simplicity */
+  border: 1px solid white; /* White border for the circle */
+  border-radius: 50%; /* Round buttons to create a circle */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px; /* Padding to increase clickable area */
+  z-index: 10; /* Ensure buttons are above other elements */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 30px; /* Width of the button */
+  height: 30px; /* Height of the button */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.prev {
+  left: 8%; /* Position 10% to the left of modal-content */
+}
+
+.next {
+  right: 7%; /* Position 10% to the right of modal-content */
+}
+
+/* Additional styles for the icon */
+.button-elem {
+  color: white; /* Initial icon color */
+  font-size: 20px; /* Adjust size of the icon */
+}
+
+/* Change color on hover */
+
+.prev:hover .button-elem,
+.next:hover .button-elem {
+  color: gray; /* Change icon color on hover */
+  background-color: transparent; /* No background for simplicity */
+  border: 1px solid white; /* White border for the circle */
+  border-radius: 50%; /* Round buttons to create a circle */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 10px; /* Padding to increase clickable area */
+  z-index: 10; /* Ensure buttons are above other elements */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 30px; /* Width of the button */
+  height: 30px; /* Height of the button */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
