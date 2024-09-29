@@ -7,7 +7,8 @@ $(".grid").imagesLoaded(function () {
 const images = [
   {
     src: "https://i.ibb.co/xG5C6ZW/z5814368596138-147252f6dea535c8ea1c7236d8450675.jpg",
-    desc: "Description of Image 1",
+    desc: "This stunning photograph captures the delicate beauty of a water lily in its early stages of bloom. Surrounded by vibrant green leaves, the white petals are gently unfurling, revealing a hint of yellow within. The soft, diffused light creates a peaceful atmosphere, highlighting the intricate details of the flower.",
+    title: "A Water Lily in Bloom",
   },
   {
     src: "https://i.ibb.co/RDDFFW4/z5814368594311-9185637726ba7c847ef98c78fba7ca90.jpg",
@@ -87,7 +88,8 @@ const images = [
   },
   {
     src: "https://i.ibb.co/kGMkZ5w/z5814368541807-87233ad250c9e006943c50605b9bd6b1.jpg",
-    desc: "Description of Image 21",
+    desc: "This stunning photograph captures the delicate beauty of a water lily in its early stages of bloom. Surrounded by vibrant green leaves, the white petals are gently unfurling, revealing a hint of yellow within. The soft, diffused light creates a peaceful atmosphere, highlighting the intricate details of the flower.",
+    title: "A Water Lily in Bloom",
   },
   {
     src: "https://i.ibb.co/fQsrd7G/z5814368541806-bd2fea60e2623f95549c7e06378bd598.jpg",
@@ -150,11 +152,13 @@ function openModal(index) {
   currentIndex = index; // Set the current index
   const modalImage = document.getElementById("modal-img");
   const modalDescription = document.getElementById("modal-desc");
+  const modalTitle = document.getElementById("modal-title"); // Add this line
 
   // Get the current image and description
   const imageData = images[currentIndex];
   modalImage.src = imageData.src;
   modalDescription.textContent = imageData.desc;
+  modalTitle.textContent = imageData.title; // Add this line
 
   // Create a temporary image element to extract color
   const img = new Image();
