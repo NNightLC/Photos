@@ -119,6 +119,12 @@ img:hover {
   background-color: rgba(0, 0, 0, 0.45); /* Set background color with opacity */
   transition: background-color 0.5s ease; /* Smooth background color transition */
 }
+.text-container {
+  display: flex;
+  flex-direction: column; /* Stack title and description vertically */
+  margin-left: 20px;
+  font-family: "Outfit", sans-serif;
+}
 
 .modal-content img {
   max-width: 40%;
@@ -126,8 +132,11 @@ img:hover {
 }
 
 .description {
-  max-width: 50%;
-  padding: 20px;
+  letter-spacing: 0.5px;
+}
+#modal-title {
+  font-size: 35px; /* Font size for title */
+  margin-bottom: 30px;
   font-family: "Outfit", sans-serif;
 }
 
