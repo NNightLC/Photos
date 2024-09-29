@@ -57,44 +57,48 @@ img:hover {
 }
 
 .grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
   text-align: center;
-  max-width: 95vw;
-  margin: 2.5vw auto;
+  max-width: 95vw; /* Set maximum width */
+  margin: 2.5vw auto; /* Center margin */
+  gap: 10px; /* Space between items */
 }
 
 .grid-item {
-  padding: 5px;
-  display: inline-block; /* Changed to inline-block for better alignment */
+  flex: 1 1 auto; /* Allow items to grow and shrink */
+  max-width: calc(
+    90% - 20px
+  ); /* Prevent items from exceeding container width, accounting for margin */
+  margin: 10px; /* Add margin to prevent overlap */
 }
-@media (min-width: 300px) and (max-width: 498px) {
+
+/* Styles for screen widths below 1000px */
+@media (max-width: 1px) {
   .grid-item {
-    width: 80%;
-  }
-}
-@media (min-width: 500px) {
-  .grid-item {
-    width: 50%;
+    flex: 0 0 calc(100% - 20px); /* Stack items and account for margin */
+    max-width: 100%; /* Ensure items take full width */
   }
 }
 
 @media (min-width: 1000px) {
   .grid-item {
-    width: 33.333%;
+    width: calc(50% - 20px); /* 50% width minus margin */
   }
 }
 
 @media (min-width: 1700px) {
   .grid-item {
-    width: 25%;
+    width: calc(25% - 20px); /* 25% width minus margin */
   }
 }
 
 @media (min-width: 2100px) {
   .grid-item {
-    width: 20%;
+    width: calc(20% - 20px); /* 20% width minus margin */
   }
 }
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
