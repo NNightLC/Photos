@@ -162,21 +162,20 @@ img:hover {
 .next {
   position: absolute; /* Absolutely position the buttons */
   top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for exact center */
-  background-color: transparent; /* No background for simplicity */
-  border: 1px solid white; /* White border for the circle */
-  border-radius: 50%; /* Round buttons to create a circle */
   cursor: pointer; /* Pointer cursor on hover */
   padding: 10px; /* Padding to increase clickable area */
   z-index: 10; /* Ensure buttons are above other elements */
   display: flex; /* Flexbox for centering */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
-  width: 30px; /* Width of the button */
-  height: 30px; /* Height of the button */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  width: 40px; /* Set a fixed width for circular shape */
+  height: 40px; /* Set a fixed height for circular shape */
+  transition: background-color 0.3s; /* Smooth transition */
+  background-color: transparent; /* Remove background color */
+  border: none; /* Remove any default border */
+  border-radius: 50%; /* Make the button circular */
+  color: white;
 }
-
 .prev {
   left: 8%; /* Position 10% to the left of modal-content */
 }
@@ -185,27 +184,13 @@ img:hover {
   right: 7%; /* Position 10% to the right of modal-content */
 }
 
-/* Additional styles for the icon */
-.button-elem {
-  color: white; /* Initial icon color */
-  font-size: 20px; /* Adjust size of the icon */
+/* Change background color on hover */
+.prev:hover,
+.next:hover {
+  background-color: gray; /* Change background color on hover */
 }
 
-/* Change color on hover */
-
-.prev:hover .button-elem,
-.next:hover .button-elem {
-  color: gray; /* Change icon color on hover */
-  background-color: transparent; /* No background for simplicity */
-  border: 1px solid white; /* White border for the circle */
-  border-radius: 50%; /* Round buttons to create a circle */
-  cursor: pointer; /* Pointer cursor on hover */
-  padding: 10px; /* Padding to increase clickable area */
-  z-index: 10; /* Ensure buttons are above other elements */
-  display: flex; /* Flexbox for centering */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  width: 30px; /* Width of the button */
-  height: 30px; /* Height of the button */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+/* Additional styles for the icon */
+.button-elem {
+  font-size: 20px; /* Adjust size of the icon */
 }
